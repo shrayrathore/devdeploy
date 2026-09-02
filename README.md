@@ -1,1 +1,1 @@
-# LanaCodes
+A tool that auto deploys your app from your github profile 

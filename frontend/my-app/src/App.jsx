@@ -11,29 +11,27 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
+import { Heading1 } from "lucide-react";
+import LoginPage from "./LoginPage";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="app">
+    // <BrowserRouter>
+    //   <div className="app">
+    //     <Navbar onMenuClick={() => setSidebarOpen(true)} />
+        
+    //     <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      <Navbar
-        onMenuClick={() => setSidebarOpen(true)}
-      />
+    //     <main className="main-content">{/* Your page content */}</main>
+    //   </div>
 
-      <Sidebar
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
-
-      <main className="main-content">
-        {/* Your page content */}
-      </main>
-
-    </div>
+    // </BrowserRouter>
+    <>
+      <LoginPage/>
+    </>
   );
 }
-
 
 export default App;

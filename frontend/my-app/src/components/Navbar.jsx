@@ -39,7 +39,7 @@ const Navbar = ({ onMenuClick }) => {
           </div>
 
           <span className="profile-name">
-            Shrey Rathore
+            Shray Rathore
           </span>
 
           <ChevronDown size={15} />

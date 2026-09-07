@@ -53,11 +53,12 @@ const Sidebar = ({ isOpen, onClose }) => {
       {isOpen && (
         <div
           className="sidebar-overlay"
-          onClick={onClose}
-        />
+          onClick={onClose} 
+        /> 
       )}
+      {/*onClose -> setSidebarOpen(false)*/}
 
-      <aside className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
+      <aside className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>  
         {/* Mobile close button */}
         <button
           className="sidebar-close"

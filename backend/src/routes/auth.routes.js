@@ -12,6 +12,8 @@ import {
   getGithubEmails,
 } from "../services/github.service.js";
 
+import "dotenv/config";  //bcoz .env is in parent folder
+
 const router = express.Router();
 
 const FRONTEND_URL =

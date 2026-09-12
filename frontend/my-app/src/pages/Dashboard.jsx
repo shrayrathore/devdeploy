@@ -1,18 +1,20 @@
-import React from 'react'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
+import {Router, BrowserRouter } from 'react-router-dom';
+import React, { useState } from 'react';
 
 export default function Dashboard() {
-  return (
-    <BrowserRouter>
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    return (
+    <>
       <div className="app">
         <Navbar onMenuClick={() => setSidebarOpen(true)} />
         
         <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-        <main className="main-content">{/* Your page content */}</main>
+        <main className="main-content"></main>
       </div>
-
-    </BrowserRouter>
+    </>
+   
   )
 }

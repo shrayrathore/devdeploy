@@ -9,6 +9,8 @@ import authRoutes from "./routes/auth.routes.js";
 import projectRoutes from "./routes/project.routes.js";
 
 dotenv.config();
+console.log("JWT_SECRET loaded:", !!process.env.JWT_SECRET);
+// console.log(process.env.JWT_SECRET)
 
 const app =
   express();

@@ -13,6 +13,8 @@ import Sidebar from "./components/Sidebar";
 import "./App.css";
 import { Heading1 } from "lucide-react";
 import LoginPage from "./LoginPage";
+import Dashboard from "./pages/Dashboard";
+import GithubSetupPage from "./pages/GithubSetupPage";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,9 +30,40 @@ function App() {
     //   </div>
 
     // </BrowserRouter>
-    <>
-      <LoginPage/>
-    </>
+     <BrowserRouter>
+      <Routes>
+
+        {/* Login */}
+        <Route
+          path="/login"
+          element={<LoginPage />}
+        />
+
+        {/* New GitHub user */}
+        <Route
+          path="/github/setup"
+          element={<GithubSetupPage />}
+        />
+
+        {/* Existing dashboard */}
+        <Route
+          path="/dashboard"
+          element={<Dashboard />}
+        />
+
+        {/* Default */}
+        <Route
+          path="/"
+          element={
+            <Navigate
+              to="/login"
+              replace
+            />
+          }
+        />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

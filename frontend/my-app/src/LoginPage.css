@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-/* =========================================================
-   Tokens
-   ========================================================= */
-.login-page {
+
+
+
+ .login-page {
   --bg-deep: #05060c;
   --bg-panel: #0a0c18;
   --bg-card: rgba(16, 18, 30, 0.86);
@@ -25,11 +25,7 @@
   overflow-x: hidden;
 }
 
-/* Single full-bleed background layer behind both columns. Painting the
-   gradient once here (instead of letting each grid column paint its own
-   slice of it) avoids the hairline seam some browsers render at the
-   column boundary when adjacent elements are promoted to separate
-   compositing layers (e.g. by the blurred cloud shapes). */
+
 .login-page::before {
   content: "";
   position: absolute;
@@ -60,9 +56,7 @@
   border: 0;
 }
 
-/* =========================================================
-   Left: illustration panel
-   ========================================================= */
+
 .illustration-panel {
   position: relative;
   z-index: 1;
@@ -176,7 +170,7 @@
   dominant-baseline: middle;
 }
 
-/* motion — only when the user hasn't asked for reduced motion */
+
 @media (prefers-reduced-motion: no-preference) {
   .art__whale {
     animation: whaleFloat 6s ease-in-out infinite;
@@ -266,9 +260,7 @@
   to { transform: rotate(360deg); }
 }
 
-/* =========================================================
-   Right: login panel + card
-   ========================================================= */
+
 .login-panel {
   position: relative;
   z-index: 1;
@@ -495,11 +487,7 @@
   filter: brightness(0.95);
 }
 
-/* =========================================================
-   Responsive breakpoints
-   ========================================================= */
 
-/* Large desktop: give the illustration a touch more room */
 @media (min-width: 1440px) {
   .scene {
     max-width: 620px;
@@ -510,7 +498,7 @@
   }
 }
 
-/* Tablet landscape / small desktop */
+
 @media (max-width: 1024px) {
   .login-page {
     grid-template-columns: 1fr 0.85fr;
@@ -529,7 +517,6 @@
   }
 }
 
-/* Tablet portrait: keep two columns but tighten everything up */
 @media (max-width: 900px) {
   .login-page {
     grid-template-columns: 1fr 320px;
@@ -544,7 +531,6 @@
   }
 }
 
-/* Mobile: stack illustration above the card */
 @media (max-width: 768px) {
   .login-page {
     display: flex;
@@ -577,7 +563,7 @@
   }
 }
 
-/* Small mobile */
+
 @media (max-width: 414px) {
   .illustration-panel {
     padding: 24px 16px 8px;
@@ -607,7 +593,7 @@
   }
 }
 
-/* Very small mobile */
+
 @media (max-width: 360px) {
   .scene__art {
     max-width: 240px;
@@ -629,5 +615,58 @@
 
   .login-card__title {
     font-size: 19px;
+  }
+} 
+
+
+
+
+
+
+/* =========================================================
+   Authentication states
+   ========================================================= */
+
+.login-error {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+
+  color: #ff9b9b;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.github-button:disabled,
+.submit-button:disabled,
+.field input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-button:disabled:hover {
+  transform: none;
+  box-shadow: 0 12px 30px -10px rgba(139, 124, 240, 0.7);
+}
+
+.login-spinner {
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+
+  border-radius: 50%;
+
+  animation: loginSpin 0.7s linear infinite;
+}
+
+@keyframes loginSpin {
+  to {
+    transform: rotate(360deg);
   }
 }

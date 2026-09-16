@@ -125,6 +125,19 @@ router.post(
         });
       }
 
+
+
+      const existingProject = await Project.findOne({
+  owner: req.userId,
+  "github.repositoryId": String(github.repositoryId),
+});
+
+if (existingProject) {
+  return res.status(409).json({
+    success: false,
+    message: "This repository has already been added as a project.",
+  });
+}
       const project =
         await Project.create({
           name: name.trim(),

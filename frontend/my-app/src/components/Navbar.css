@@ -12,7 +12,9 @@
   position: fixed;
   top: 0;
   left: 0;
+  right:0;
   z-index: 1000;
+  box-sizing:border-box;
 }
 
 /* ---------------- LEFT ---------------- */
@@ -61,7 +63,7 @@
 
   background: #081421;
   border: 1px solid #18283a;
-  border-radius: 7px;
+  border-radius: 27px;
 
   color: #64748b;
 }

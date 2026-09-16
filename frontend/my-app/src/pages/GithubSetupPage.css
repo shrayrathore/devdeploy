@@ -1,0 +1,229 @@
+.github-setup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(139, 124, 240, 0.14),
+      transparent 40%
+    ),
+    linear-gradient(
+      160deg,
+      #05060c 0%,
+      #0c0a1c 55%,
+      #100b22 100%
+    );
+
+  color: #eef0fb;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.github-setup-card {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 38px 34px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  background: rgba(16, 18, 30, 0.88);
+
+  box-shadow:
+    0 30px 60px -25px rgba(0, 0, 0, 0.7),
+    0 0 60px -20px rgba(139, 124, 240, 0.25);
+
+  backdrop-filter: blur(20px);
+}
+
+.github-setup-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: rgba(139, 124, 240, 0.14);
+  color: #8b7cf0;
+
+  box-shadow:
+    0 0 25px rgba(139, 124, 240, 0.25);
+}
+
+.github-setup-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.github-setup-card h1 {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.github-setup-subtitle {
+  margin: 12px 0 26px;
+
+  color: #8b90ad;
+
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.github-setup-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.github-setup-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.github-setup-card input {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #eef0fb;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+}
+
+.github-setup-card input::placeholder {
+  color: #6f748f;
+}
+
+.github-setup-card input:focus {
+  border-color: rgba(139, 124, 240, 0.5);
+
+  box-shadow:
+    0 0 0 3px rgba(139, 124, 240, 0.12);
+}
+
+.setup-password {
+  position: relative;
+}
+
+.setup-password input {
+  padding-right: 60px;
+}
+
+.setup-password button {
+  position: absolute;
+
+  right: 8px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+
+  color: #8b7cf0;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.github-setup-error {
+  margin-bottom: 18px;
+
+  padding: 10px 12px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ff9b9b;
+
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.github-setup-submit {
+  margin-top: 4px;
+
+  padding: 13px;
+
+  border: none;
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b7cf0,
+      #6f5fe0
+    );
+
+  color: white;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px -10px rgba(139, 124, 240, 0.7);
+}
+
+.github-setup-submit:hover {
+  transform: translateY(-1px);
+}
+
+.github-setup-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .github-setup-page {
+    padding: 16px;
+  }
+
+  .github-setup-card {
+    padding: 30px 22px;
+    border-radius: 16px;
+  }
+
+  .github-setup-card h1 {
+    font-size: 21px;
+  }
+}

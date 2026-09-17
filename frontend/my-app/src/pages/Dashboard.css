@@ -336,7 +336,7 @@
 
 .dashboard-bottom-grid {
   display: grid;
-  grid-template-columns: minmax(230px, 0.8fr) minmax(400px, 1.2fr);
+  grid-template-columns: minmax(240px, 0.68fr) minmax(440px, 1.32fr);
   gap: 10px;
 }
 
@@ -347,6 +347,8 @@
 
 .health-card {
   min-height: 155px;
+  display: flex;
+  flex-direction: column;
 }
 
 .health-content {
@@ -355,7 +357,8 @@
 
   min-height: 117px;
   padding: 10px 16px;
-  gap: 18px;
+  gap: 44px;
+  flex: 1;
 }
 
 .donut-wrapper {
@@ -369,8 +372,8 @@
 .donut-chart {
   position: relative;
 
-  width: 92px;
-  height: 92px;
+  width: 150px;
+  height: 150px;
 
   border-radius: 50%;
 
@@ -412,7 +415,7 @@
 
 .donut-inner strong {
   color: #e9f0f8;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
   line-height: 1;
 }
@@ -421,7 +424,7 @@
   margin-top: 3px;
 
   color: #8493a7;
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .health-legend {
@@ -439,13 +442,13 @@
   gap: 7px;
 
   color: #9caabd;
-  font-size: 9px;
+  font-size: 15px;
 }
 
 .legend-row strong {
   color: #d7e0eb;
-  font-size: 8px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 300;
 }
 
 .legend-color {
@@ -472,7 +475,12 @@
    ========================================================= */
 
 .trend-card {
-  min-height: 155px;
+  min-height: 200px;
+}
+
+.trend-card .card-heading {
+  flex-wrap: wrap;
+  row-gap: 4px;
 }
 
 .chart-legend {
@@ -487,7 +495,7 @@
   gap: 4px;
 
   color: #8796aa;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .chart-dot {
@@ -513,8 +521,8 @@
 
 .chart-wrapper {
   width: 100%;
-  height: 118px;
-  padding: 4px 8px 0;
+  /* height: 150px; */
+  padding: 12px 16px 10px;
 
   box-sizing: border-box;
 }
@@ -533,13 +541,13 @@
 
 .deployment-chart text {
   fill: #708096;
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .deployment-chart polyline {
   fill: none;
 
-  stroke-width: 2;
+  stroke-width: 2.25;
 
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -559,6 +567,9 @@
 
 .deployment-chart circle {
   fill: #3b82f6;
+  stroke: #142338;
+  stroke-width: 1.25;
+  r: 3.5px;
 }
 
 
@@ -580,9 +591,12 @@
     grid-template-columns: 1fr;
   }
 
-  .health-card,
+  .health-card {
+    min-height: 200px;
+  }
+
   .trend-card {
-    min-height: 160px;
+    min-height: 200px;
   }
 }
 
@@ -649,7 +663,12 @@
   }
 
   .chart-legend span {
-    font-size: 7px;
+    font-size: 8px;
+  }
+
+  .chart-wrapper {
+    height: 150px;
+    padding: 10px 12px 8px;
   }
 
 }

@@ -6,6 +6,7 @@ import "./App.css";
 import LoginPage from "./LoginPage";
 import Dashboard from "./pages/Dashboard";
 import GithubSetupPage from "./pages/GithubSetupPage";
+import CreateNewProject from "./pages/CreateNewProject";
 
 // Protected route
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -14,30 +15,20 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         {/* ==================== PUBLIC ROUTES ==================== */}
 
-        <Route
-          path="/login"
-          element={<LoginPage />}
-        />
-        <Route
-          path="/github/setup"
-          element={<GithubSetupPage />}
-          />
-        
-
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/github/setup" element={<GithubSetupPage />} />
 
         {/* ==================== PROTECTED ROUTES ==================== */}
 
         <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
 
           <Route
-            path="/dashboard"
-            element={<Dashboard />}
+            path="/projects/new"
+            element={<CreateNewProject />}
           />
-          
-
 
           {/* Add future protected pages here */}
           {/*
@@ -56,23 +47,14 @@ function App() {
             element={<Environment />}
           />
           */}
-
         </Route>
-
 
         {/* ==================== DEFAULT ==================== */}
 
-        <Route
-          path="/"
-          element={<Navigate to="/login" replace />}
-        />
+        <Route path="/" element={<Navigate to="/login" replace />} />
 
         {/* Unknown URL */}
-        <Route
-          path="*"
-          element={<Navigate to="/login" replace />}
-        />
-
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );

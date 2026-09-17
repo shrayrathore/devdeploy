@@ -19,8 +19,8 @@
 //   )
 // }
 
-import NewProjectModal from "../components/NewProjectModel";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Folder, Rocket, CheckCircle2, XCircle, Plus, Eye } from "lucide-react";
 
 import Sidebar from "../components/Sidebar";
@@ -30,8 +30,8 @@ import api from "../services/api";
 import "./Dashboard.css";
 
 export default function Dashboard() {
-  const [newProjectOpen, setNewProjectOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
   //loading user
   const [user, setUser] = useState(null);
 
@@ -96,16 +96,6 @@ export default function Dashboard() {
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <main className="main-content dashboard-main">
-        <NewProjectModal
-          isOpen={newProjectOpen}
-          onClose={() => setNewProjectOpen(false)}
-          onCreated={(project) => {
-            console.log("Project created:", project);
-
-            // Later we can update dashboard statistics
-            // or refresh project data here.
-          }}
-        />
         {/* ================= HEADER ================= */}
         <section className="dashboard-header">
           <div>
@@ -116,7 +106,7 @@ export default function Dashboard() {
         
           <button
             className="new-project-btn"
-            onClick={() => setNewProjectOpen(true)}
+            onClick={() => navigate("/projects/new")}
           >
             <Plus size={17} />
             New Project
@@ -406,22 +396,22 @@ export default function Dashboard() {
                 <text x="48" y="205">
                   7d
                 </text>
-                <text x="90" y="205">
+                <text x="130" y="205">
                   6d
                 </text>
-                <text x="130" y="205">
+                <text x="210" y="205">
                   5d
                 </text>
-                <text x="170" y="205">
+                <text x="290" y="205">
                   4d
                 </text>
-                <text x="210" y="205">
+                <text x="370" y="205">
                   3d
                 </text>
-                <text x="250" y="205">
+                <text x="450" y="205">
                   2d
                 </text>
-                <text x="290" y="205">
+                <text x="530" y="205">
                   1d
                 </text>
               </svg>
